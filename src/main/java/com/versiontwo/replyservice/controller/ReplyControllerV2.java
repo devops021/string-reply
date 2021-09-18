@@ -9,17 +9,33 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author Mukul Anand
+ */
 @RestController
 public class ReplyControllerV2 {
 
+	/**
+	 * replyService object to get rul logic
+	 */
 	@Autowired
 	ReplyService replyService;
 
+	/**
+	 *
+	 * @return ReplyMessage
+	 * Message is empty when no input provided
+	 */
 	@GetMapping("/v2/reply")
 	public ReplyMessage replying() {
 		return new ReplyMessage("Message is empty");
 	}
 
+	/**
+	 *
+	 * @return ReplyMessage
+	 * response according to rule
+	 */
 	@GetMapping("/v2/reply/{message}")
 	public ReplyMessage replying(@PathVariable String message) throws NoSuchAlgorithmException, InvalidInputException {
 		ReplyMessage replyMessage = replyService.messageProcessor(message);

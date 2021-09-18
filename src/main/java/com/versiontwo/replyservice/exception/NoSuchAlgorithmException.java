@@ -1,5 +1,8 @@
 package com.versiontwo.replyservice.exception;
 
+/**
+ * @author Mukul Anand
+ */
 public class NoSuchAlgorithmException extends java.security.NoSuchAlgorithmException {
 
     private String message;

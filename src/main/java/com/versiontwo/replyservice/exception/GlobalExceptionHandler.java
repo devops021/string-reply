@@ -8,8 +8,17 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * @author Mukul Anand
+ */
 @ControllerAdvice
-public class GlobalException {
+public class GlobalExceptionHandler {
+
+    /**
+     *
+     * @param invalidInputException
+     * @return ExceptionResponse
+     */
     @ExceptionHandler(InvalidInputException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public @ResponseBody ExceptionResponse handleInvalidInput(final InvalidInputException invalidInputException){
@@ -18,6 +27,11 @@ public class GlobalException {
         return exceptionResponse;
     }
 
+    /**
+     *
+     * @param noSuchAlgorithmException
+     * @return ExceptionResponse
+     */
     @ExceptionHandler(NoSuchAlgorithmException.class)
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     public @ResponseBody ExceptionResponse handleNoSuchAlgorithm(final NoSuchAlgorithmException noSuchAlgorithmException){

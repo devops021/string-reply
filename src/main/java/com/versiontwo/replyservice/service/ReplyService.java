@@ -10,8 +10,19 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author Mukul Anand
+ */
 @Service
 public class ReplyService {
+
+    /**
+     *
+     * @param message
+     * @return ReplyMessage
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidInputException
+     */
     public ReplyMessage messageProcessor(String message) throws NoSuchAlgorithmException,InvalidInputException {
         Pattern pattern = Pattern.compile("^([1-2]{2})+(-[0-9a-z]+)$");
         Matcher matcher = pattern.matcher(message);

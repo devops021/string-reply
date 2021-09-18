@@ -1,5 +1,8 @@
 package com.versiontwo.replyservice.exception;
 
+/**
+ * @author Mukul Anand
+ */
 public class ExceptionResponse {
 
     private String errorMessage;

@@ -4,8 +4,16 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * @author Mukul Anand
+ */
 public class CommonUtil {
 
+    /**
+     *
+     * @param input
+     * @return reverse String
+     */
     public static String reverseString(String input){
         if (input.length() <= 1) {
             return input;
@@ -13,6 +21,12 @@ public class CommonUtil {
         return reverseString(input.substring(1)) + input.charAt(0);
     }
 
+    /**
+     *
+     * @param input
+     * @return MD5 encoded String
+     * @throws com.versiontwo.replyservice.exception.NoSuchAlgorithmException
+     */
     public static String encoderMD5(String input) throws com.versiontwo.replyservice.exception.NoSuchAlgorithmException {
         String hashtext = "";
         try {
