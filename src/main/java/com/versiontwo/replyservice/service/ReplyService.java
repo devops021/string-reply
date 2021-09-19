@@ -4,6 +4,7 @@ import com.dto.ReplyMessage;
 import com.versiontwo.replyservice.exception.InvalidInputException;
 import com.versiontwo.replyservice.exception.NoSuchAlgorithmException;
 import com.versiontwo.replyservice.util.CommonUtil;
+import com.versiontwo.replyservice.util.Constants;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -17,7 +18,7 @@ import java.util.regex.Pattern;
 public class ReplyService {
 
     /**
-     *
+     * messageProcessor method to process the rules
      * @param message
      * @return ReplyMessage
      * @throws NoSuchAlgorithmException
@@ -39,11 +40,13 @@ public class ReplyService {
             }
 
             while (!ruleStack.isEmpty()) {
-                output = ruleStack.pop() == 1 ? output.equals("") ? CommonUtil.reverseString(rawMessage) : CommonUtil.reverseString(output) : output.equals("") ? CommonUtil.encoderMD5(rawMessage) : CommonUtil.encoderMD5(output);
+                output = ruleStack.pop() == 1 ? output.equals("") ? CommonUtil.reverseString(rawMessage) :
+                        CommonUtil.reverseString(output) : output.equals("") ? CommonUtil.encoderMD5(rawMessage) :
+                        CommonUtil.encoderMD5(output);
             }
             return new ReplyMessage(output);
         }else {
-            throw new InvalidInputException("Invalid Input");
+            throw new InvalidInputException(Constants.INVALID_INPUT);
         }
     }
 }

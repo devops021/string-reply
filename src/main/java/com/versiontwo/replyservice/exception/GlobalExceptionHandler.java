@@ -15,7 +15,7 @@ import java.security.NoSuchAlgorithmException;
 public class GlobalExceptionHandler {
 
     /**
-     *
+     * handleInvalidInput exception method
      * @param invalidInputException
      * @return ExceptionResponse
      */
@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     *
+     * handleNoSuchAlgorithm exception method
      * @param noSuchAlgorithmException
      * @return ExceptionResponse
      */

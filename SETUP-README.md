@@ -1,10 +1,9 @@
 # Package structure for new requirement
-
-com.versiontwo.replyservice
-							- controller : v2/reply/ controller
-							- exception : Custome exception classes and global exception handler
-							- service: Service 
-							- util: utility for command operations
+- com.versiontwo.replyservice
+	- controller : New requirement v2 controllers
+	- exception : Custome exception classes and global exception handler
+	- service: Service to handle logic
+	- util: Utility for command operations like reverse string and MD5 encoding
 							
 # Test cases
 com.versiontwo.replyservice.ReplyServiceTest
@@ -18,4 +17,41 @@ com.versiontwo.replyservice.ReplyServiceTest
 - testReplyServiceRule22Success will test rule 22 
 - testReplyServiceRule22Failure will test rule 22 Failure
 - testReplyServiceInvalidRuleFailure will test invalid rule
+
+# End points
+- Rule 11
+```
+GET localhost:8080/v2/reply/11-kbzw9ru
+{
+    "data": "kbzw9ru"
+}
+```
+- Rule 12
+```
+GET localhost:8080/v2/reply/12-kbzw9ru
+{
+    "data": "5a8973b3b1fafaeaadf10e195c6e1dd4"
+}
+```
+- Rule 21
+```
+GET localhost:8080/v2/reply/21-kbzw9ru
+{
+    "data": "daf168567f92b1c464459087eaaefaf0"
+}
+```
+- Rule 22
+```
+GET localhost:8080/v2/reply/22-kbzw9ru
+{
+    "data": "e8501e64cf0a9fa45e3c25aa9e77ffd5"
+}
+```
+- Rule invalid 23
+```
+GET localhost:8080/v2/reply/23-kbzw9ru
+{
+    "errorMessage":"Invalid Input"
+}
+```
 

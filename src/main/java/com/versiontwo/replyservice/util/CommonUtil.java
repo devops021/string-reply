@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 public class CommonUtil {
 
     /**
-     *
+     * Reverse string method
      * @param input
      * @return reverse String
      */
@@ -22,7 +22,7 @@ public class CommonUtil {
     }
 
     /**
-     *
+     * MD5 encoder method
      * @param input
      * @return MD5 encoded String
      * @throws com.versiontwo.replyservice.exception.NoSuchAlgorithmException
